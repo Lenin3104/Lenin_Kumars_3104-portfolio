@@ -1,0 +1,2474 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin | Lenin Kumar</title>
+
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+  <style>
+    
+/* =====================================================
+   LENIN PORTFOLIO ADMIN
+   DARK + LIGHT THEME
+===================================================== */
+
+
+:root {
+
+    --bg: #06070b;
+
+    --card: rgba(255,255,255,.045);
+
+    --text: #f5f7fb;
+
+    --muted: #969daa;
+
+    --muted2: #656b78;
+
+    --accent: #756cff;
+
+    --accent2: #00d9ff;
+
+    --border: rgba(255,255,255,.09);
+
+    --sidebar-bg: rgba(8,10,15,.82);
+
+    --danger: #ff7080;
+
+}
+
+
+/* =====================================================
+   LIGHT THEME
+===================================================== */
+
+body.light {
+
+    --bg: #f4f6fa;
+
+    --card: rgba(255,255,255,.85);
+
+    --text: #11131a;
+
+    --muted: #626875;
+
+    --muted2: #8b909c;
+
+    --border: rgba(20,25,35,.10);
+
+    --sidebar-bg: rgba(255,255,255,.9);
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    background:
+        var(--bg);
+
+    color:
+        var(--text);
+
+    min-height:
+        100vh;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.admin-background {
+
+    position: fixed;
+
+    width: 500px;
+
+    height: 500px;
+
+    top: -250px;
+
+    left: -200px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(117,108,255,.12);
+
+    filter:
+        blur(100px);
+
+    z-index: -1;
+
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 245px;
+
+    padding: 35px 20px;
+
+    border-right:
+        1px solid var(--border);
+
+    background:
+        var(--sidebar-bg);
+
+    backdrop-filter:
+        blur(20px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition:
+        background .3s ease,
+        border .3s ease;
+
+}
+
+
+.admin-logo {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    margin-bottom: 55px;
+
+    padding-left: 10px;
+
+}
+
+
+.admin-logo span {
+
+    color:
+        var(--accent2);
+
+}
+
+
+.admin-label {
+
+    color:
+        var(--muted2);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    padding-left: 10px;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.sidebar nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.side-link {
+
+    width: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        var(--muted);
+
+    text-align: left;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: .3s ease;
+
+}
+
+
+.side-link:hover {
+
+    color:
+        var(--text);
+
+    background:
+        rgba(117,108,255,.10);
+
+    transform:
+        translateX(3px);
+
+}
+
+
+.side-link.active {
+
+    color: white;
+
+    background:
+        rgba(117,108,255,.14);
+
+    border-left:
+        2px solid var(--accent);
+
+}
+
+
+/* =====================================================
+   BACK TO PORTFOLIO
+===================================================== */
+
+.back-site {
+
+    margin-top: auto;
+
+    padding: 13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    color:
+        var(--muted);
+
+    font-size: 11px;
+
+    text-decoration: none;
+
+    transition: .3s ease;
+
+}
+
+
+.back-site:hover {
+
+    color:
+        var(--text);
+
+    border-color:
+        var(--accent);
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.admin-main {
+
+    margin-left: 245px;
+
+    padding: 45px;
+
+    max-width: 1500px;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.admin-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom: 45px;
+
+}
+
+
+.admin-header p,
+.section-title p {
+
+    color:
+        var(--accent2);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+
+.admin-header h1 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 38px;
+
+    letter-spacing: -2px;
+
+}
+
+
+/* =====================================================
+   HEADER ACTIONS
+===================================================== */
+
+.header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+.theme-toggle {
+
+    width: 42px;
+
+    height: 42px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    background:
+        var(--card);
+
+    color:
+        var(--text);
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .3s ease;
+
+}
+
+
+.theme-toggle:hover {
+
+    border-color:
+        var(--accent);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =====================================================
+   CLEAR BUTTON
+===================================================== */
+
+.danger-btn {
+
+    border:
+        1px solid rgba(255,80,100,.3);
+
+    background:
+        rgba(255,80,100,.06);
+
+    color:
+        var(--danger);
+
+    padding:
+        11px 16px;
+
+    border-radius:
+        9px;
+
+    cursor:
+        pointer;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+}
+
+
+.danger-btn:hover {
+
+    background:
+        rgba(255,80,100,.12);
+
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.admin-section {
+
+    display: none;
+
+    animation:
+        fadeSection .3s ease;
+
+}
+
+
+.admin-section.active {
+
+    display: block;
+
+}
+
+
+@keyframes fadeSection {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.section-title {
+
+    margin-bottom: 30px;
+
+}
+
+
+.section-title h2 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 35px;
+
+    letter-spacing: -2px;
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.stat-card {
+
+    padding: 25px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    background:
+        var(--card);
+
+    transition: .3s ease;
+
+}
+
+
+.stat-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(117,108,255,.35);
+
+}
+
+
+.stat-card span {
+
+    display: block;
+
+    color:
+        var(--muted2);
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.stat-card strong {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 36px;
+
+    color:
+        var(--text);
+
+}
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+.panel {
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    background:
+        var(--card);
+
+    overflow: hidden;
+
+}
+
+
+.panel-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    padding: 20px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.panel-header h2 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 17px;
+
+}
+
+
+.panel-header button {
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        var(--accent2);
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   DATA
+===================================================== */
+
+.data-list {
+
+    min-height: 150px;
+
+}
+
+
+.data-item {
+
+    padding:
+        17px 20px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.data-item:last-child {
+
+    border-bottom:
+        none;
+
+}
+
+
+.data-item strong {
+
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.data-item span {
+
+    color:
+        var(--muted);
+
+    font-size: 10px;
+
+}
+
+
+.empty {
+
+    padding:
+        40px 20px;
+
+    text-align:
+        center;
+
+    color:
+        var(--muted2);
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-wrapper {
+
+    overflow-x:
+        auto;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        18px;
+
+    background:
+        var(--card);
+
+}
+
+
+table {
+
+    width:
+        100%;
+
+    border-collapse:
+        collapse;
+
+    min-width:
+        600px;
+
+}
+
+
+th {
+
+    color:
+        var(--muted2);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1px;
+
+    text-align:
+        left;
+
+    padding:
+        17px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+td {
+
+    padding:
+        17px;
+
+    font-size:
+        11px;
+
+    color:
+        var(--muted);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+tr:last-child td {
+
+    border-bottom:
+        none;
+
+}
+
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+.message-container {
+
+    display:
+        grid;
+
+    gap:
+        15px;
+
+}
+
+
+.message-card {
+
+    padding:
+        25px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        18px;
+
+    background:
+        var(--card);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.message-card:hover {
+
+    border-color:
+        rgba(117,108,255,.35);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.message-header {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.message-header h3 {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        17px;
+
+}
+
+
+.message-date {
+
+    color:
+        var(--muted2);
+
+    font-size:
+        9px;
+
+}
+
+
+.message-meta {
+
+    color:
+        var(--accent2);
+
+    font-size:
+        10px;
+
+    margin-bottom:
+        12px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.message-body {
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.8;
+
+}
+
+
+.message-status {
+
+    display:
+        inline-block;
+
+    margin-top:
+        15px;
+
+    padding:
+        5px 8px;
+
+    border-radius:
+        6px;
+
+    background:
+        rgba(0,217,255,.08);
+
+    color:
+        var(--accent2);
+
+    font-size:
+        8px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:900px) {
+
+    .sidebar {
+
+        position:
+            relative;
+
+        width:
+            100%;
+
+        height:
+            auto;
+
+        padding:
+            20px;
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid var(--border);
+
+    }
+
+
+    .admin-logo {
+
+        margin-bottom:
+            20px;
+
+    }
+
+
+    .sidebar nav {
+
+        flex-direction:
+            row;
+
+        overflow-x:
+            auto;
+
+    }
+
+
+    .side-link {
+
+        white-space:
+            nowrap;
+
+        width:
+            auto;
+
+    }
+
+
+    .back-site {
+
+        margin-top:
+            15px;
+
+    }
+
+
+    .admin-main {
+
+        margin-left:
+            0;
+
+        padding:
+            25px 18px;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .admin-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            20px;
+
+    }
+
+
+    .header-actions {
+
+        width:
+            100%;
+
+        justify-content:
+            flex-end;
+
+    }
+
+
+    .admin-header h1 {
+
+        font-size:
+            30px;
+
+    }
+
+}
+
+
+@media(max-width:500px) {
+
+    .stats-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .admin-main {
+
+        padding:
+            22px 14px;
+
+    }
+
+
+    .message-header {
+
+        flex-direction:
+            column;
+
+    }
+
+}
+
+
+  </style>
+</head>
+
+
+<body>
+
+<div class="admin-background"></div>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <div class="admin-logo">
+        LENIN<span>.</span>
+    </div>
+
+    <p class="admin-label">
+        ADMIN PANEL
+    </p>
+
+
+    <nav>
+
+        <button class="side-link active"
+                data-section="dashboard">
+            Dashboard
+        </button>
+
+
+        <button class="side-link"
+                data-section="visitors">
+            Visitors
+        </button>
+
+
+        <button class="side-link"
+                data-section="messages">
+            Messages
+        </button>
+
+
+        <button class="side-link"
+                data-section="projects">
+            Projects
+        </button>
+
+    </nav>
+
+
+    <a href="index.html"
+       class="back-site">
+
+        ← Back to Portfolio
+
+    </a>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="admin-main">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
+    <header class="admin-header">
+
+        <div>
+
+            <p>
+                ADMINISTRATION
+            </p>
+
+            <h1>
+                Portfolio Dashboard
+            </h1>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <!-- THEME -->
+
+            <button id="themeToggle"
+                    class="theme-toggle"
+                    title="Change Theme">
+
+                <span id="themeIcon">
+                    ☾
+                </span>
+
+            </button>
+
+
+            <!-- CLEAR -->
+
+            <button id="clearData"
+                    class="danger-btn">
+
+                Clear Data
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         DASHBOARD
+    ================================================= -->
+
+    <section id="dashboard"
+             class="admin-section active">
+
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <span>
+                    TOTAL VISITORS
+                </span>
+
+                <strong id="visitorCount">
+                    0
+                </strong>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <span>
+                    MESSAGES
+                </span>
+
+                <strong id="messageCount">
+                    0
+                </strong>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <span>
+                    PROJECT CLICKS
+                </span>
+
+                <strong id="projectClickCount">
+                    0
+                </strong>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <span>
+                    NEW MESSAGES
+                </span>
+
+                <strong id="newMessageCount">
+                    0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="dashboard-grid">
+
+
+            <!-- RECENT VISITORS -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Recent Visitors
+                    </h2>
+
+                    <button data-open="visitors">
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div id="recentVisitors"
+                     class="data-list">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RECENT MESSAGES -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h2>
+                        Recent Messages
+                    </h2>
+
+                    <button data-open="messages">
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div id="recentMessages"
+                     class="data-list">
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         VISITORS
+    ================================================= -->
+
+    <section id="visitors"
+             class="admin-section">
+
+
+        <div class="section-title">
+
+            <p>
+                ANALYTICS
+            </p>
+
+            <h2>
+                Visitors
+            </h2>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            #
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Page
+                        </th>
+
+                        <th>
+                            Browser
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="visitorTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MESSAGES
+    ================================================= -->
+
+    <section id="messages"
+             class="admin-section">
+
+
+        <div class="section-title">
+
+            <p>
+                CONTACT REQUESTS
+            </p>
+
+            <h2>
+                Messages
+            </h2>
+
+        </div>
+
+
+        <div id="messageContainer"
+             class="message-container">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROJECTS
+    ================================================= -->
+
+    <section id="projects"
+             class="admin-section">
+
+
+        <div class="section-title">
+
+            <p>
+                PROJECT ANALYTICS
+            </p>
+
+            <h2>
+                Project Clicks
+            </h2>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            #
+                        </th>
+
+                        <th>
+                            Project
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="projectTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<script>
+  
+/* =====================================================
+   LENIN PORTFOLIO ADMIN DASHBOARD
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    /* =================================================
+       STORAGE
+    ================================================= */
+
+    function getStorage(key) {
+
+        try {
+
+            return JSON.parse(
+                localStorage.getItem(key)
+            ) || [];
+
+        } catch (error) {
+
+            console.error(
+                "Storage Error:",
+                error
+            );
+
+            return [];
+
+        }
+
+    }
+
+
+    function getVisitors() {
+
+        return getStorage(
+            "portfolioVisitors"
+        );
+
+    }
+
+
+    function getMessages() {
+
+        return getStorage(
+            "portfolioContacts"
+        );
+
+    }
+
+
+    function getProjectClicks() {
+
+        return getStorage(
+            "portfolioProjectClicks"
+        );
+
+    }
+
+
+
+    /* =================================================
+       ELEMENTS
+    ================================================= */
+
+    const visitorCount =
+        document.getElementById(
+            "visitorCount"
+        );
+
+
+    const messageCount =
+        document.getElementById(
+            "messageCount"
+        );
+
+
+    const projectClickCount =
+        document.getElementById(
+            "projectClickCount"
+        );
+
+
+    const newMessageCount =
+        document.getElementById(
+            "newMessageCount"
+        );
+
+
+
+    /* =================================================
+       STATISTICS
+    ================================================= */
+
+    function updateStats() {
+
+        const visitors =
+            getVisitors();
+
+
+        const messages =
+            getMessages();
+
+
+        const projectClicks =
+            getProjectClicks();
+
+
+        visitorCount.textContent =
+            visitors.length;
+
+
+        messageCount.textContent =
+            messages.length;
+
+
+        projectClickCount.textContent =
+            projectClicks.length;
+
+
+        newMessageCount.textContent =
+            messages.filter(
+                message =>
+                    message.status === "New"
+            ).length;
+
+    }
+
+
+
+    /* =================================================
+       RECENT VISITORS
+    ================================================= */
+
+    function renderRecentVisitors() {
+
+        const container =
+            document.getElementById(
+                "recentVisitors"
+            );
+
+
+        const visitors =
+            getVisitors().slice(0, 5);
+
+
+        if (!visitors.length) {
+
+            container.innerHTML = `
+                <div class="empty">
+                    No visitors yet.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        container.innerHTML =
+            visitors.map(
+                visitor => `
+
+                    <div class="data-item">
+
+                        <strong>
+                            Portfolio Visitor
+                        </strong>
+
+                        <span>
+                            ${escapeHTML(
+                                visitor.date
+                            )}
+                        </span>
+
+                    </div>
+
+                `
+            ).join("");
+
+    }
+
+
+
+    /* =================================================
+       RECENT MESSAGES
+    ================================================= */
+
+    function renderRecentMessages() {
+
+        const container =
+            document.getElementById(
+                "recentMessages"
+            );
+
+
+        const messages =
+            getMessages().slice(0, 5);
+
+
+        if (!messages.length) {
+
+            container.innerHTML = `
+                <div class="empty">
+                    No messages yet.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        container.innerHTML =
+            messages.map(
+                message => `
+
+                    <div class="data-item">
+
+                        <strong>
+                            ${escapeHTML(
+                                message.name
+                            )}
+                        </strong>
+
+                        <span>
+                            ${escapeHTML(
+                                message.subject
+                            )}
+                        </span>
+
+                    </div>
+
+                `
+            ).join("");
+
+    }
+
+
+
+    /* =================================================
+       VISITOR TABLE
+    ================================================= */
+
+    function renderVisitorTable() {
+
+        const table =
+            document.getElementById(
+                "visitorTable"
+            );
+
+
+        const visitors =
+            getVisitors();
+
+
+        if (!visitors.length) {
+
+            table.innerHTML = `
+                <tr>
+
+                    <td colspan="4">
+                        No visitor data available.
+                    </td>
+
+                </tr>
+            `;
+
+            return;
+
+        }
+
+
+        table.innerHTML =
+            visitors.map(
+                (visitor, index) => `
+
+                    <tr>
+
+                        <td>
+                            ${index + 1}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(
+                                visitor.date
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(
+                                visitor.page
+                            )}
+                        </td>
+
+                        <td>
+                            ${getBrowser(
+                                visitor.userAgent
+                            )}
+                        </td>
+
+                    </tr>
+
+                `
+            ).join("");
+
+    }
+
+
+
+    /* =================================================
+       MESSAGES
+    ================================================= */
+
+    function renderMessages() {
+
+        const container =
+            document.getElementById(
+                "messageContainer"
+            );
+
+
+        const messages =
+            getMessages();
+
+
+        if (!messages.length) {
+
+            container.innerHTML = `
+                <div class="empty">
+                    No contact requests yet.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        container.innerHTML =
+            messages.map(
+                message => `
+
+                    <article
+                        class="message-card">
+
+                        <div
+                            class="message-header">
+
+                            <h3>
+                                ${escapeHTML(
+                                    message.name
+                                )}
+                            </h3>
+
+                            <span
+                                class="message-date">
+
+                                ${escapeHTML(
+                                    message.date
+                                )}
+
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="message-meta">
+
+                            ${escapeHTML(
+                                message.email
+                            )}
+
+                            <br>
+
+                            ${escapeHTML(
+                                message.subject
+                            )}
+
+                        </div>
+
+
+                        <p
+                            class="message-body">
+
+                            ${escapeHTML(
+                                message.message
+                            )}
+
+                        </p>
+
+
+                        <span
+                            class="message-status">
+
+                            ${escapeHTML(
+                                message.status
+                            )}
+
+                        </span>
+
+                    </article>
+
+                `
+            ).join("");
+
+    }
+
+
+
+    /* =================================================
+       PROJECT TABLE
+    ================================================= */
+
+    function renderProjectTable() {
+
+        const table =
+            document.getElementById(
+                "projectTable"
+            );
+
+
+        const clicks =
+            getProjectClicks();
+
+
+        if (!clicks.length) {
+
+            table.innerHTML = `
+                <tr>
+
+                    <td colspan="3">
+                        No project clicks yet.
+                    </td>
+
+                </tr>
+            `;
+
+            return;
+
+        }
+
+
+        table.innerHTML =
+            clicks.map(
+                (click, index) => `
+
+                    <tr>
+
+                        <td>
+                            ${index + 1}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(
+                                click.project
+                            )}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(
+                                click.date
+                            )}
+                        </td>
+
+                    </tr>
+
+                `
+            ).join("");
+
+    }
+
+
+
+    /* =================================================
+       BROWSER
+    ================================================= */
+
+    function getBrowser(userAgent) {
+
+        if (!userAgent) {
+
+            return "Unknown";
+
+        }
+
+
+        /* Edge FIRST */
+
+        if (
+            userAgent.includes("Edg")
+        ) {
+
+            return "Edge";
+
+        }
+
+
+        if (
+            userAgent.includes("Chrome")
+        ) {
+
+            return "Chrome";
+
+        }
+
+
+        if (
+            userAgent.includes("Firefox")
+        ) {
+
+            return "Firefox";
+
+        }
+
+
+        if (
+            userAgent.includes("Safari")
+        ) {
+
+            return "Safari";
+
+        }
+
+
+        return "Other";
+
+    }
+
+
+
+    /* =================================================
+       SECURITY
+    ================================================= */
+
+    function escapeHTML(value) {
+
+        if (
+            value === null ||
+            value === undefined
+        ) {
+
+            return "";
+
+        }
+
+
+        return String(value)
+
+            .replaceAll(
+                "&",
+                "&amp;"
+            )
+
+            .replaceAll(
+                "<",
+                "&lt;"
+            )
+
+            .replaceAll(
+                ">",
+                "&gt;"
+            )
+
+            .replaceAll(
+                '"',
+                "&quot;"
+            )
+
+            .replaceAll(
+                "'",
+                "&#039;"
+            );
+
+    }
+
+
+
+    /* =================================================
+       SIDEBAR
+    ================================================= */
+
+    const sideLinks =
+        document.querySelectorAll(
+            ".side-link"
+        );
+
+
+    const sections =
+        document.querySelectorAll(
+            ".admin-section"
+        );
+
+
+    function openSection(sectionId) {
+
+        sections.forEach(
+            section => {
+
+                section.classList.toggle(
+                    "active",
+                    section.id === sectionId
+                );
+
+            }
+        );
+
+
+        sideLinks.forEach(
+            link => {
+
+                link.classList.toggle(
+                    "active",
+                    link.dataset.section ===
+                    sectionId
+                );
+
+            }
+        );
+
+    }
+
+
+    sideLinks.forEach(
+        link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    openSection(
+                        link.dataset.section
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* =================================================
+       VIEW ALL
+    ================================================= */
+
+    document.querySelectorAll(
+        "[data-open]"
+    ).forEach(
+        button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    openSection(
+                        button.dataset.open
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* =================================================
+       CLEAR DATA
+    ================================================= */
+
+    const clearData =
+        document.getElementById(
+            "clearData"
+        );
+
+
+    if (clearData) {
+
+        clearData.addEventListener(
+            "click",
+            () => {
+
+                const confirmDelete =
+                    confirm(
+                        "Are you sure you want to delete all portfolio tracking data?"
+                    );
+
+
+                if (!confirmDelete) {
+
+                    return;
+
+                }
+
+
+                localStorage.removeItem(
+                    "portfolioVisitors"
+                );
+
+
+                localStorage.removeItem(
+                    "portfolioContacts"
+                );
+
+
+                localStorage.removeItem(
+                    "portfolioProjectClicks"
+                );
+
+
+                loadDashboard();
+
+            }
+        );
+
+    }
+
+
+
+    /* =================================================
+       THEME
+    ================================================= */
+
+    const themeToggle =
+        document.getElementById(
+            "themeToggle"
+        );
+
+
+    const themeIcon =
+        document.getElementById(
+            "themeIcon"
+        );
+
+
+    function applyTheme(theme) {
+
+        if (theme === "light") {
+
+            document.body.classList.add(
+                "light"
+            );
+
+
+            if (themeIcon) {
+
+                themeIcon.textContent =
+                    "☀";
+
+            }
+
+        } else {
+
+            document.body.classList.remove(
+                "light"
+            );
+
+
+            if (themeIcon) {
+
+                themeIcon.textContent =
+                    "☾";
+
+            }
+
+        }
+
+    }
+
+
+    const savedTheme =
+        localStorage.getItem(
+            "portfolioTheme"
+        );
+
+
+    applyTheme(
+        savedTheme || "dark"
+    );
+
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener(
+            "click",
+            () => {
+
+                const isLight =
+                    document.body.classList.contains(
+                        "light"
+                    );
+
+
+                const newTheme =
+                    isLight
+                        ? "dark"
+                        : "light";
+
+
+                localStorage.setItem(
+                    "portfolioTheme",
+                    newTheme
+                );
+
+
+                applyTheme(
+                    newTheme
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =================================================
+       LIVE DATA UPDATE
+    ================================================= */
+
+    window.addEventListener(
+        "storage",
+        event => {
+
+            if (
+                event.key ===
+                "portfolioContacts" ||
+
+                event.key ===
+                "portfolioVisitors" ||
+
+                event.key ===
+                "portfolioProjectClicks"
+            ) {
+
+                loadDashboard();
+
+            }
+
+
+            if (
+                event.key ===
+                "portfolioTheme"
+            ) {
+
+                applyTheme(
+                    event.newValue || "dark"
+                );
+
+            }
+
+        }
+    );
+
+
+
+    /* =================================================
+       LOAD DASHBOARD
+    ================================================= */
+
+    function loadDashboard() {
+
+        updateStats();
+
+        renderRecentVisitors();
+
+        renderRecentMessages();
+
+        renderVisitorTable();
+
+        renderMessages();
+
+        renderProjectTable();
+
+    }
+
+
+
+    /* =================================================
+       INITIAL LOAD
+    ================================================= */
+
+    loadDashboard();
+
+});
+
+
+</script>
+</body>
+
+</html>
+```
